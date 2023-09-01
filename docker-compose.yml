@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    container_name: ContenedorMysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=carlosdb
+    ports:
+      - 3306:3306
+
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: ContenedorMongoDb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_ROOT_DATABASE=mongodb
+    ports:
+      - 27017:27017
